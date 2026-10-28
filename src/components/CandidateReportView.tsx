@@ -1,26 +1,5 @@
 import React, { useState } from 'react';
-import {
-  ArrowLeft,
-  Download,
-  Share2,
-  CheckCircle,
-  Clock,
-  Phone,
-  Mail,
-  MapPin,
-  Briefcase,
-  Play,
-  Pause,
-  Volume2,
-  Star,
-  Sparkles,
-  FileText,
-  AlertCircle,
-  Calendar,
-  Send,
-  UserCheck,
-  UserX,
-} from 'lucide-react';
+import { ArrowLeft, Download, Share2, CircleCheck as CheckCircle, Clock, Phone, Mail, MapPin, Briefcase, Play, Pause, Volume2, Star, Sparkles, FileText, CircleAlert as AlertCircle, Calendar, Send, UserCheck, UserX } from 'lucide-react';
 import { Candidate } from '../types';
 
 interface CandidateReportViewProps {
@@ -38,8 +17,49 @@ export const CandidateReportView: React.FC<CandidateReportViewProps> = ({
   const [audioProgress, setAudioProgress] = useState(35);
   const [activeTab, setActiveTab] = useState<'assessment' | 'transcript' | 'notes'>('assessment');
   const [notes, setNotes] = useState(
-    'Candidate answered all QA and BRD questions with strong confidence. Recommending for technical interview with lead QA.'
+    candidate.comments ||
+      'Add your recruiter evaluation notes here...'
   );
+
+  const report = candidate.skillBrewReport;
+  const hasReport = Boolean(report && report.transcript.length > 0);
+
+  const transcript = report?.transcript ?? [
+    {
+      speaker: 'AI Screener (Anya)',
+      time: '00:00',
+      text: 'No screening call recording available for this candidate yet.',
+    },
+  ];
+
+  const competencies = report?.competencies ?? [];
+  const strengths = report?.strengths ?? ['No strengths recorded yet.'];
+  const round2Probes = report?.round2Probes ?? ['No follow-up probes recorded yet.'];
+
+  const overallFit = report?.overallFitScore ?? candidate.matchScore;
+  const recommendation = report?.recommendation ?? 'Consider';
+  const callDuration = report?.callDuration ?? '—';
+  const callDate = report?.callDate ?? '—';
+  const summary = report?.summary ??
+    'No AI screening summary is available for this candidate. Send the candidate to AI Calling to generate a SkillBrew evaluation report.';
+
+  const recommendationLabel =
+    recommendation === 'Strong Hire'
+      ? 'Recommendation: Shortlist'
+      : recommendation === 'Advance'
+      ? 'Recommendation: Advance to Round 2'
+      : recommendation === 'Do Not Advance'
+      ? 'Recommendation: Do Not Advance'
+      : 'Recommendation: Consider';
+
+  const recommendationTone =
+    recommendation === 'Strong Hire'
+      ? 'bg-white text-[#008392] border-teal-300'
+      : recommendation === 'Advance'
+      ? 'bg-white text-sky-700 border-sky-300'
+      : recommendation === 'Do Not Advance'
+      ? 'bg-white text-rose-700 border-rose-300'
+      : 'bg-white text-amber-700 border-amber-300';
 
   const getStatusBadge = (status?: string) => {
     switch (status) {
@@ -61,54 +81,6 @@ export const CandidateReportView: React.FC<CandidateReportViewProps> = ({
         return 'bg-slate-100 text-slate-700 border-slate-300';
     }
   };
-
-  const transcript = [
-    {
-      speaker: 'AI Screener (Anya)',
-      time: '00:04',
-      text: `Hello ${candidate.name}, this is Anya calling from Innov Facilities regarding the Business Analyst and QA Engineer position in Bangalore. Do you have 4 minutes for a quick screening?`,
-    },
-    {
-      speaker: candidate.name,
-      time: '00:15',
-      text: `Hi Anya, yes! I am available right now. Glad to connect.`,
-    },
-    {
-      speaker: 'AI Screener (Anya)',
-      time: '00:22',
-      text: `Wonderful! I see you have around ${candidate.experience} in software quality assurance and data analysis. Could you share your hands-on experience with REST API testing and regression suites?`,
-    },
-    {
-      speaker: candidate.name,
-      time: '00:48',
-      text: `In my current role, I lead API functional verification using Postman and Swagger. I validate status codes, response payloads, and schema definitions. For regression testing, we maintain automated test suites in Jenkins and Docker containers, running sanity and regression passes before every bi-weekly release sprint.`,
-    },
-    {
-      speaker: 'AI Screener (Anya)',
-      time: '01:32',
-      text: `That is very relevant. How do you bridge business requirements into testable user stories and acceptance criteria?`,
-    },
-    {
-      speaker: candidate.name,
-      time: '02:05',
-      text: `I collaborate directly with product managers during sprint grooming. I break down BRD documents into Jira user stories, define Given-When-Then acceptance criteria, and ensure our QA team has complete requirement traceability matrices before development begins.`,
-    },
-    {
-      speaker: 'AI Screener (Anya)',
-      time: '02:50',
-      text: `Great. And regarding logistics: our monthly budget for this role is ₹ 20,000 to ₹ 30,000 in Bangalore. What are your notice period and current location?`,
-    },
-    {
-      speaker: candidate.name,
-      time: '03:15',
-      text: `I am currently based in ${candidate.preferredLocations[0] || 'Bangalore'} and my official notice period is ${candidate.noticePeriod}. My compensation expectations fall comfortably within ₹ 25,000 to ₹ 28,000 per month.`,
-    },
-    {
-      speaker: 'AI Screener (Anya)',
-      time: '03:42',
-      text: `Thank you, ${candidate.name}! That aligns well with our team's timeline. Our recruiting team will follow up shortly with next steps. Have a great day!`,
-    },
-  ];
 
   return (
     <div className="flex-1 flex flex-col bg-slate-50 overflow-y-auto">
@@ -214,7 +186,7 @@ export const CandidateReportView: React.FC<CandidateReportViewProps> = ({
                   Overall Fit
                 </span>
                 <p className="text-2xl font-bold text-[#008392] tabular-nums mt-0.5">
-                  {candidate.matchScore >= 90 ? '94%' : '88%'}
+                  {overallFit}%
                 </p>
                 <span className="text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
                   Strong Match
@@ -251,15 +223,15 @@ export const CandidateReportView: React.FC<CandidateReportViewProps> = ({
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-[#008392]" />
                 <h3 className="text-sm font-bold text-slate-900">
-                  AI Screening Recommendation: Advance to Technical Interview
+                  AI Screening Recommendation: {recommendation}
                 </h3>
               </div>
               <p className="text-xs text-slate-700 leading-relaxed max-w-4xl">
-                {candidate.name} demonstrated a strong grasp of both Quality Assurance test strategies (API verification, test cases, regression testing) and Business Analysis processes (BRD parsing, user story mapping). Clear communication and direct alignment with the ₹ 20k - 30k compensation structure.
+                {summary}
               </p>
             </div>
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-white text-[#008392] border border-teal-300 shadow-2xs shrink-0">
-              Recommendation: Shortlist
+            <span className={`px-3 py-1 rounded-full text-xs font-bold border shadow-2xs shrink-0 ${recommendationTone}`}>
+              {recommendationLabel}
             </span>
           </div>
         </div>
@@ -309,54 +281,29 @@ export const CandidateReportView: React.FC<CandidateReportViewProps> = ({
                 </h4>
 
                 <div className="space-y-4">
-                  {[
-                    {
-                      label: 'Quality Assurance & Regression Testing',
-                      desc: 'REST API verification, regression suite maintenance, Docker test pipelines',
-                      score: 94,
-                      rating: '4.7 / 5.0',
-                    },
-                    {
-                      label: 'Business Analysis & Requirements Translation',
-                      desc: 'Transforming BRD/FRD into Jira user stories and acceptance criteria',
-                      score: 90,
-                      rating: '4.5 / 5.0',
-                    },
-                    {
-                      label: 'SQL & Data Validation',
-                      desc: 'Database queries, data integrity checks, verification against staging databases',
-                      score: 92,
-                      rating: '4.6 / 5.0',
-                    },
-                    {
-                      label: 'Communication & Problem Solving',
-                      desc: 'Clear, articulate responses during technical explanations and cross-team alignment',
-                      score: 88,
-                      rating: '4.4 / 5.0',
-                    },
-                    {
-                      label: 'Availability & Compensation Match',
-                      desc: 'Immediate to 15-day notice, acceptable salary range ₹ 25k - 28k / mo',
-                      score: 98,
-                      rating: '4.9 / 5.0',
-                    },
-                  ].map((comp, idx) => (
-                    <div key={idx} className="space-y-1.5">
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="font-bold text-slate-800">{comp.label}</span>
-                        <span className="font-semibold text-slate-700 tabular-nums">
-                          {comp.rating}
-                        </span>
+                  {competencies.length > 0 ? (
+                    competencies.map((comp, idx) => (
+                      <div key={idx} className="space-y-1.5">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="font-bold text-slate-800">{comp.label}</span>
+                          <span className="font-semibold text-slate-700 tabular-nums">
+                            {comp.rating}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-500">{comp.desc}</p>
+                        <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                          <div
+                            className="bg-[#008392] h-full rounded-full transition-all duration-500"
+                            style={{ width: `${comp.score}%` }}
+                          />
+                        </div>
                       </div>
-                      <p className="text-[11px] text-slate-500">{comp.desc}</p>
-                      <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
-                        <div
-                          className="bg-[#008392] h-full rounded-full transition-all duration-500"
-                          style={{ width: `${comp.score}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
+                    ))
+                  ) : (
+                    <p className="text-xs text-slate-500">
+                      No competency evaluations are available yet for this candidate.
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -387,18 +334,12 @@ export const CandidateReportView: React.FC<CandidateReportViewProps> = ({
                   <span>Key Strengths</span>
                 </h4>
                 <ul className="text-xs text-slate-600 space-y-2 leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
-                    <span>Strong hands-on command of API debugging and Postman scripts.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
-                    <span>Proactive understanding of sprint grooming and traceability matrices.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
-                    <span>Comfortable working in hybrid Bangalore office environment.</span>
-                  </li>
+                  {strengths.map((s, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
+                      <span>{s}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -408,14 +349,12 @@ export const CandidateReportView: React.FC<CandidateReportViewProps> = ({
                   <span>Follow-up in Round 2</span>
                 </h4>
                 <ul className="text-xs text-slate-600 space-y-2 leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 mt-1.5" />
-                    <span>Test deep SQL joins and query optimization in real-time coding.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 mt-1.5" />
-                    <span>Ask for specific examples of conflict resolution between QA and dev teams.</span>
-                  </li>
+                  {round2Probes.map((p, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 mt-1.5" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -430,8 +369,9 @@ export const CandidateReportView: React.FC<CandidateReportViewProps> = ({
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <button
-                    onClick={() => setIsPlayingAudio(!isPlayingAudio)}
-                    className="w-10 h-10 rounded-full bg-[#008392] hover:bg-[#007380] text-white flex items-center justify-center shadow-xs transition-transform active:scale-95"
+                    onClick={() => hasReport && setIsPlayingAudio(!isPlayingAudio)}
+                    disabled={!hasReport}
+                    className="w-10 h-10 rounded-full bg-[#008392] hover:bg-[#007380] text-white flex items-center justify-center shadow-xs transition-transform active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     {isPlayingAudio ? (
                       <Pause className="w-4 h-4" />
@@ -444,22 +384,27 @@ export const CandidateReportView: React.FC<CandidateReportViewProps> = ({
                       AI Phone Screening Recording
                     </h4>
                     <p className="text-[11px] text-slate-500">
-                      Duration: 03:52 mins · Recorded on 22 Oct 2026
+                      {hasReport
+                        ? `Duration: ${callDuration} · Recorded on ${callDate}`
+                        : 'No recording available'}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex-1 max-w-md mx-6 flex items-center gap-3">
-                  <span className="text-[11px] font-mono text-slate-500 tabular-nums">01:24</span>
+                  <span className="text-[11px] font-mono text-slate-500 tabular-nums">00:00</span>
                   <input
                     type="range"
                     min="0"
                     max="100"
                     value={audioProgress}
+                    disabled={!hasReport}
                     onChange={(e) => setAudioProgress(Number(e.target.value))}
-                    className="w-full accent-[#008392] h-1.5 bg-slate-200 rounded-lg cursor-pointer"
+                    className="w-full accent-[#008392] h-1.5 bg-slate-200 rounded-lg cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
                   />
-                  <span className="text-[11px] font-mono text-slate-500 tabular-nums">03:52</span>
+                  <span className="text-[11px] font-mono text-slate-500 tabular-nums">
+                    {hasReport ? callDuration.replace(' mins', '') : '--:--'}
+                  </span>
                 </div>
 
                 <div className="flex items-center gap-2 text-slate-500">

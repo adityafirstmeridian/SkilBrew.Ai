@@ -12,6 +12,31 @@ export type AiSourcingStatus =
   | 'Completed'
   | 'Failed';
 
+export interface SkillBrewCompetency {
+  label: string;
+  score: number;
+  rating: string;
+  desc: string;
+}
+
+export interface SkillBrewTranscriptTurn {
+  speaker: string;
+  time: string;
+  text: string;
+}
+
+export interface SkillBrewReport {
+  overallFitScore: number;
+  recommendation: 'Strong Hire' | 'Advance' | 'Consider' | 'Do Not Advance';
+  callDuration: string;
+  callDate: string;
+  summary: string;
+  competencies: SkillBrewCompetency[];
+  strengths: string[];
+  round2Probes: string[];
+  transcript: SkillBrewTranscriptTurn[];
+}
+
 export interface Candidate {
   id: string;
   name: string;
@@ -34,6 +59,7 @@ export interface Candidate {
   education?: string;
   appliedDate: string;
   ctc?: string;
+  skillBrewReport?: SkillBrewReport;
 }
 
 export interface PipelineStats {
