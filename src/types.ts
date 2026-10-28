@@ -72,3 +72,15 @@ export interface CallLog {
   notes: string;
   timestamp: string;
 }
+
+export interface SkillBrewRoleData {
+  roleId: string;
+  status: 'ACTIVE' | 'PAUSED' | 'ARCHIVED';
+  roleTitle: string;
+  voiceModel: string;
+  screeningCriteria: string[];
+  activatedAt: string;
+  requirementId: string;
+  candidatesSubmittedCount: number;
+  lastSyncAt: string;
+}

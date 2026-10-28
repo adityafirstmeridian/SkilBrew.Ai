@@ -14,6 +14,8 @@ import {
   X,
   Pause,
   AlertCircle,
+  FileText,
+  Award,
 } from 'lucide-react';
 import { Candidate, AiSourcingStatus, AiCallingStatus } from '../types';
 
@@ -463,11 +465,21 @@ export const RecommendedCards: React.FC<RecommendedCardsProps> = ({
                 }`}
               >
                 {/* Top-Right Corner Actions */}
-                <div className="absolute top-4 right-4 flex items-center gap-3 text-slate-400">
+                <div className="absolute top-4 right-4 flex items-center gap-2.5 text-slate-400">
+                  {/* Dedicated SkillBrew Report Button */}
+                  <button
+                    onClick={() => onViewReport?.(candidate)}
+                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-teal-50 hover:bg-teal-100 text-[#008392] border border-teal-200 text-xs font-bold transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
+                    title={`Open SkillBrew Report for ${candidate.name}`}
+                  >
+                    <FileText className="w-3.5 h-3.5 text-[#008392]" />
+                    <span>SkillBrew Report</span>
+                  </button>
+
                   {/* Call icon button (Option to call them!) */}
                   <button
                     onClick={() => onCallCandidate(candidate)}
-                    className="p-1.5 rounded-full text-slate-500 hover:text-emerald-700 hover:bg-emerald-50 transition-colors"
+                    className="p-1.5 rounded-full text-slate-500 hover:text-emerald-700 hover:bg-emerald-50 transition-colors cursor-pointer"
                     title={`Call ${candidate.name} (${candidate.phone})`}
                   >
                     <Phone className="w-4 h-4 text-emerald-600" />

@@ -48,7 +48,7 @@ export const INITIAL_CANDIDATES: Candidate[] = [
     matchScore: 93,
     email: 'amonuc1@gmail.com',
     phone: '+91 7295963369',
-    comments: '',
+    comments: 'Strong performance across API verification and SQL testing. Recommended for fast-track offer.',
     aiSourcingStatus: 'Completed',
     experience: '4 Years Experience',
     experienceYears: 4,
@@ -61,6 +61,102 @@ export const INITIAL_CANDIDATES: Candidate[] = [
     education: 'B.Tech Computer Science',
     appliedDate: '12/09/2026',
     ctc: '₹ 28,000 / mo',
+    skillBrewReport: {
+      overallFitScore: 94,
+      recommendation: 'Strong Hire',
+      callDuration: '04:12 mins',
+      callDate: '24 Oct 2026',
+      summary:
+        'Raj demonstrated solid hands-on domain mastery in both Quality Assurance regression testing and Business Analysis. Confidently explained REST API validation, Jira user story decomposition, and database integrity checks. Very good communication skills and comfortable with the ₹ 28,000/mo salary budget in Bangalore.',
+      competencies: [
+        {
+          label: 'QA Testing & API Automation',
+          score: 95,
+          rating: '4.8 / 5.0',
+          desc: 'Demonstrated deep familiarity with Postman test suites, regression pipelines, and bug lifecycles.',
+        },
+        {
+          label: 'Business Analysis & BRD Translation',
+          score: 91,
+          rating: '4.6 / 5.0',
+          desc: 'High competency in converting complex client specifications into user stories with clear acceptance criteria.',
+        },
+        {
+          label: 'SQL & Data Integrity Checks',
+          score: 93,
+          rating: '4.7 / 5.0',
+          desc: 'Proficient in complex queries, sub-queries, joins, and database verification across staging environments.',
+        },
+        {
+          label: 'Communication & Cross-Functional Alignment',
+          score: 90,
+          rating: '4.5 / 5.0',
+          desc: 'Spoke with clear articulation, polite cadence, and active listening throughout the AI voice screen.',
+        },
+        {
+          label: 'Logistics, Notice & Budget Fit',
+          score: 98,
+          rating: '4.9 / 5.0',
+          desc: 'Available within 15 days in Bangalore; current CTC and expectation align closely with job budget.',
+        },
+      ],
+      strengths: [
+        'Hands-on experience managing regression runs and Postman collections.',
+        'Extensive background in Jira board management and requirement traceability.',
+        'Immediate readiness to join Bangalore office within 15 days.',
+      ],
+      round2Probes: [
+        'Deep dive into test automation frameworks using Selenium or Playwright.',
+        'Give a real-world scenario of resolving conflicting requirements between product owner and dev team.',
+      ],
+      transcript: [
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:04',
+          text: 'Hello Raj, this is Anya from Innov Facilities calling regarding your application for the Business Analyst and QA position. Do you have 4 minutes for a quick screening?',
+        },
+        {
+          speaker: 'Raj',
+          time: '00:14',
+          text: 'Hi Anya, yes absolutely! I am available right now and glad to connect.',
+        },
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:21',
+          text: 'Great. With your 4 years of experience as a Quality Analyst, could you describe your approach to testing REST APIs and managing regression suites?',
+        },
+        {
+          speaker: 'Raj',
+          time: '00:46',
+          text: 'In my current project, I design end-to-end API suites in Postman using environment variables and assertion scripts. Before every fortnightly release sprint, I trigger our regression suite, log issues directly to Jira with reproducible payloads, and ensure 100% test coverage.',
+        },
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '01:28',
+          text: 'Impressive. And how do you handle translating business requirement documents into testable stories?',
+        },
+        {
+          speaker: 'Raj',
+          time: '01:58',
+          text: 'I participate in grooming sessions with product managers. I review the BRD, clarify ambiguous business rules, and craft Given-When-Then criteria so both developers and QA share identical expectations.',
+        },
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '02:44',
+          text: 'That aligns seamlessly with our requirements. Regarding logistics: the budget is ₹ 20,000 to ₹ 30,000 per month in Bangalore. Does that match your expectation and what is your notice period?',
+        },
+        {
+          speaker: 'Raj',
+          time: '03:10',
+          text: 'Yes, my expectation is around ₹ 28,000 per month and I can join within 15 days as my handover is already underway.',
+        },
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '03:38',
+          text: 'Thank you Raj. Your profile has been fast-tracked for technical team review.',
+        },
+      ],
+    },
   },
   {
     id: 'cand-2',
@@ -83,6 +179,86 @@ export const INITIAL_CANDIDATES: Candidate[] = [
     education: 'BCA',
     appliedDate: '15/09/2026',
     ctc: '₹ 25,000 / mo',
+    skillBrewReport: {
+      overallFitScore: 82,
+      recommendation: 'Advance',
+      callDuration: '03:18 mins',
+      callDate: '23 Oct 2026',
+      summary:
+        'Yogesh has 3.5 years of experience focused on manual testing and Postman API sanity testing. Eager to take on business analysis responsibilities. Notice period is immediate which makes him an attractive operational candidate.',
+      competencies: [
+        {
+          label: 'Manual & Regression Testing',
+          score: 88,
+          rating: '4.4 / 5.0',
+          desc: 'High experience drafting detailed test suites and regression test passes.',
+        },
+        {
+          label: 'Business Analysis Fundamentals',
+          score: 74,
+          rating: '3.7 / 5.0',
+          desc: 'Understands user acceptance testing and user workflows, but limited formal BRD writing.',
+        },
+        {
+          label: 'API & Postman Testing',
+          score: 82,
+          rating: '4.1 / 5.0',
+          desc: 'Comfortable with GET/POST endpoint validation and status code verification.',
+        },
+        {
+          label: 'Communication & Articulation',
+          score: 79,
+          rating: '3.9 / 5.0',
+          desc: 'Straightforward answers; will benefit from structured presentation.',
+        },
+        {
+          label: 'Availability & Compensation Match',
+          score: 96,
+          rating: '4.8 / 5.0',
+          desc: 'Immediate joiner in Bangalore; comfortable with ₹ 25,000/mo.',
+        },
+      ],
+      strengths: [
+        'Immediate joiner, zero notice period needed.',
+        'High dedication to manual test case execution and defect verification.',
+      ],
+      round2Probes: [
+        'Evaluate ability to prepare functional specification documents independently.',
+        'Assess basic SQL queries and database validation.',
+      ],
+      transcript: [
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:03',
+          text: 'Hello Yogesh, this is Anya from Innov Facilities. Do you have a moment for a screening call regarding our QA and BA role?',
+        },
+        {
+          speaker: 'Test Yogesh',
+          time: '00:12',
+          text: 'Yes Anya, sure! I am ready.',
+        },
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:18',
+          text: 'Could you tell us about your experience in regression testing and working with Postman?',
+        },
+        {
+          speaker: 'Test Yogesh',
+          time: '00:38',
+          text: 'I have been executing regression test cases for web portals. I use Postman to check API endpoints, verify json response parameters, and report bugs in Jira.',
+        },
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '01:15',
+          text: 'And when can you join if selected, and what is your location preference?',
+        },
+        {
+          speaker: 'Test Yogesh',
+          time: '01:30',
+          text: 'I am based in Bangalore and can join immediately without notice period. My expected salary is ₹ 25,000 per month.',
+        },
+      ],
+    },
   },
   {
     id: 'cand-3',
@@ -92,7 +268,7 @@ export const INITIAL_CANDIDATES: Candidate[] = [
     matchScore: 100,
     email: 'shuvamjena2607@gmail.com',
     phone: '+91 6370863861',
-    comments: '',
+    comments: 'Exceptional technical match for Docker-based testing and API automation.',
     aiSourcingStatus: 'Not Started',
     experience: '3 Years Experience',
     experienceYears: 3,
@@ -100,33 +276,194 @@ export const INITIAL_CANDIDATES: Candidate[] = [
     designation: 'Software Test Engineer',
     preferredLocations: ['Bengaluru'],
     source: 'NLP',
-    noticePeriod: 'N/A',
+    noticePeriod: '15 Days',
     passingYear: '2023',
     education: 'B.Tech IT',
     appliedDate: '26/08/2026',
     ctc: '₹ 30,000 / mo',
+    skillBrewReport: {
+      overallFitScore: 96,
+      recommendation: 'Strong Hire',
+      callDuration: '04:35 mins',
+      callDate: '25 Oct 2026',
+      summary:
+        'Shuvam achieved a perfect 100% technical matching score. He demonstrated advanced proficiency in containerized test environments with Docker, automated API test suites, and data-driven testing. Outstanding candidate for the technical QA side.',
+      competencies: [
+        {
+          label: 'REST API & Containerized Testing (Docker)',
+          score: 98,
+          rating: '4.9 / 5.0',
+          desc: 'Maintains Docker containers for regression suites and automated test runner environments.',
+        },
+        {
+          label: 'Data-Driven QA & Test Case Design',
+          score: 94,
+          rating: '4.7 / 5.0',
+          desc: 'Designs parameterized test matrices covering edge-case data validations.',
+        },
+        {
+          label: 'Requirements & Agile Processes',
+          score: 92,
+          rating: '4.6 / 5.0',
+          desc: 'Participates actively in sprint grooming and user story acceptance definitions.',
+        },
+        {
+          label: 'Problem Solving & Architecture',
+          score: 95,
+          rating: '4.8 / 5.0',
+          desc: 'Strong root-cause analysis when debugging failing tests and backend errors.',
+        },
+        {
+          label: 'Budget & Location Alignment',
+          score: 92,
+          rating: '4.6 / 5.0',
+          desc: 'Located in Bengaluru; expected salary ₹ 30,000/mo fits the upper tier.',
+        },
+      ],
+      strengths: [
+        'Hands-on expertise running test harnesses inside Docker.',
+        'Deep command of REST APIs, headers, auth tokens, and response validations.',
+        'High degree of technical independence and test automation mindset.',
+      ],
+      round2Probes: [
+        'Check willingness to do stakeholder requirement gatherings alongside testing.',
+        'Evaluate experience with performance testing tools like JMeter or k6.',
+      ],
+      transcript: [
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:04',
+          text: 'Hello Shuvam, Anya here from Innov Facilities regarding the QA and Business Analyst opening in Bengaluru. Do you have a few moments?',
+        },
+        {
+          speaker: 'Shuvam Jena',
+          time: '00:15',
+          text: 'Hi Anya, absolutely! Happy to speak.',
+        },
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:23',
+          text: 'We noticed your strong background with Docker and REST API testing. Can you briefly describe how you set up containerized test suites?',
+        },
+        {
+          speaker: 'Shuvam Jena',
+          time: '00:52',
+          text: 'Sure! We package our Postman Newman CLI runner inside lightweight Alpine Docker images. It spins up in our CI/CD runner against staging endpoints, executes data-driven assertions from CSV inputs, and publishes HTML report artifacts automatically.',
+        },
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '01:40',
+          text: 'That is outstanding. How do you ensure requirements from business analysts are mapped to test suites?',
+        },
+        {
+          speaker: 'Shuvam Jena',
+          time: '02:08',
+          text: 'I maintain a requirement traceability matrix directly linked to Jira epics and stories. Every user story acceptance condition maps to at least one automated and manual regression test case.',
+        },
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '02:50',
+          text: 'And regarding your location and compensation expectation?',
+        },
+        {
+          speaker: 'Shuvam Jena',
+          time: '03:10',
+          text: 'I live in Bengaluru and can commute to the office easily. My expectation is ₹ 30,000 per month, with a 15-day notice period.',
+        },
+      ],
+    },
   },
   {
     id: 'cand-4',
     name: 'Naresh Gali',
     avatarColor: 'bg-slate-800 text-white',
     status: 'Applied',
-    matchScore: 100,
+    matchScore: 89,
     email: 'nareshsnow95@gmail.com',
     phone: '+91 8688906395',
-    comments: '',
+    comments: 'Senior profile with automated test framework background. Screening scheduled.',
     aiSourcingStatus: 'Scheduled',
     experience: '10.5 Years Experience',
     experienceYears: 10.5,
     keySkills: ['Technical Presentations', 'Sso (saml, Oauth2)', 'Atf (automated Test Framework)'],
-    designation: 'Software Developer, Software Developer, Software Developer',
-    preferredLocations: ['Unknown'],
+    designation: 'Senior QA / Lead Analyst',
+    preferredLocations: ['Bangalore', 'Hyderabad'],
     source: 'NLP',
-    noticePeriod: 'N/A',
+    noticePeriod: '30 Days',
     passingYear: '2016',
     education: 'B.E CSE',
     appliedDate: '18/09/2026',
     ctc: '₹ 30,000 / mo',
+    skillBrewReport: {
+      overallFitScore: 88,
+      recommendation: 'Advance',
+      callDuration: '03:45 mins',
+      callDate: '26 Oct 2026',
+      summary:
+        'Naresh is a veteran software test professional with 10+ years of experience in enterprise test automation and presentation skills. Willing to adapt to the current project scope and lead junior testers.',
+      competencies: [
+        {
+          label: 'Test Framework Architecture',
+          score: 95,
+          rating: '4.8 / 5.0',
+          desc: 'High expertise in automated test suites and security protocol verification.',
+        },
+        {
+          label: 'Business Requirement Analysis',
+          score: 90,
+          rating: '4.5 / 5.0',
+          desc: 'Able to interface directly with enterprise clients and product architects.',
+        },
+        {
+          label: 'Technical Mentorship',
+          score: 92,
+          rating: '4.6 / 5.0',
+          desc: 'Strong experience mentoring junior QAs and conducting code reviews.',
+        },
+        {
+          label: 'Communication & Presentations',
+          score: 93,
+          rating: '4.7 / 5.0',
+          desc: 'Excellent verbal presentation and documentation clarity.',
+        },
+        {
+          label: 'Budget Alignment',
+          score: 75,
+          rating: '3.8 / 5.0',
+          desc: 'Budget is at the maximum limit (₹ 30k) for this junior-to-mid level band.',
+        },
+      ],
+      strengths: [
+        'Extensive enterprise testing and architecture experience.',
+        'High capability in security, authentication (OAuth2, SAML), and technical presentations.',
+      ],
+      round2Probes: [
+        'Verify satisfaction with hands-on individual contributor tasks vs management.',
+        'Confirm flexibility regarding in-office presence in Bangalore.',
+      ],
+      transcript: [
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:04',
+          text: 'Hello Naresh, Anya here from Innov Facilities regarding your application. Do you have a few moments for a quick voice check?',
+        },
+        {
+          speaker: 'Naresh Gali',
+          time: '00:16',
+          text: 'Hello Anya, yes I have time. Go ahead please.',
+        },
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:24',
+          text: 'With your deep experience in Automated Test Frameworks and enterprise systems, could you share how you ensure high quality in Agile sprints?',
+        },
+        {
+          speaker: 'Naresh Gali',
+          time: '00:55',
+          text: 'I establish strict Definition of Ready and Definition of Done. We shift testing left by testing API contracts before frontend components are merged, drastically reducing regression cycle time.',
+        },
+      ],
+    },
   },
   {
     id: 'cand-5',
@@ -149,6 +486,75 @@ export const INITIAL_CANDIDATES: Candidate[] = [
     education: 'B.Com / MBA',
     appliedDate: '20/09/2026',
     ctc: '₹ 22,000 / mo',
+    skillBrewReport: {
+      overallFitScore: 86,
+      recommendation: 'Advance',
+      callDuration: '02:40 mins',
+      callDate: '21 Oct 2026',
+      summary:
+        'Pooja is a strong Business Analyst with 2.5 years experience gathering stakeholder requirements, creating user stories, and facilitating UAT testing. Very affordable CTC fit at ₹ 22,000/mo.',
+      competencies: [
+        {
+          label: 'Business Analysis & User Stories',
+          score: 93,
+          rating: '4.7 / 5.0',
+          desc: 'Translates business user needs into structured user stories and acceptance criteria.',
+        },
+        {
+          label: 'UAT & Manual Quality Verification',
+          score: 84,
+          rating: '4.2 / 5.0',
+          desc: 'Coordinates client UAT runs and logs feedback accurately.',
+        },
+        {
+          label: 'Data Analysis (Excel / PowerBI)',
+          score: 87,
+          rating: '4.4 / 5.0',
+          desc: 'Comfortable preparing analytical dashboards and reports for leadership.',
+        },
+        {
+          label: 'Communication & Stakeholder Handling',
+          score: 89,
+          rating: '4.5 / 5.0',
+          desc: 'Articulate and diplomatic in stakeholder meetings.',
+        },
+        {
+          label: 'Budget Fit',
+          score: 98,
+          rating: '4.9 / 5.0',
+          desc: 'Current expectation of ₹ 22,000/mo falls very comfortably in budget.',
+        },
+      ],
+      strengths: [
+        'Strong business acumen and MBA background.',
+        'Experienced in driving User Acceptance Testing with real business users.',
+      ],
+      round2Probes: [
+        'Evaluate willingness to learn API and Postman testing workflows.',
+      ],
+      transcript: [
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:03',
+          text: 'Hello Pooja, calling from Innov Facilities for a brief screening. Do you have 3 minutes?',
+        },
+        {
+          speaker: 'Pooja Sharma',
+          time: '00:11',
+          text: 'Yes Anya, hello! Happy to speak.',
+        },
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:18',
+          text: 'How do you coordinate with developers when a business stakeholder requests a change in acceptance criteria mid-sprint?',
+        },
+        {
+          speaker: 'Pooja Sharma',
+          time: '00:44',
+          text: 'I assess the impact on sprint velocity and timeline. If critical, we write a formal change ticket and renegotiate story points with the tech lead rather than disrupting code freeze.',
+        },
+      ],
+    },
   },
   {
     id: 'cand-6',
@@ -158,7 +564,7 @@ export const INITIAL_CANDIDATES: Candidate[] = [
     matchScore: 91,
     email: 'ananya.roy@example.com',
     phone: '+91 9741223890',
-    comments: '',
+    comments: 'AI Screening call completed. Audio and transcript processed.',
     aiSourcingStatus: 'Report Processing',
     experience: '3.8 Years Experience',
     experienceYears: 3.8,
@@ -171,6 +577,75 @@ export const INITIAL_CANDIDATES: Candidate[] = [
     education: 'B.Tech IT',
     appliedDate: '21/09/2026',
     ctc: '₹ 27,000 / mo',
+    skillBrewReport: {
+      overallFitScore: 92,
+      recommendation: 'Strong Hire',
+      callDuration: '03:55 mins',
+      callDate: '27 Oct 2026',
+      summary:
+        'Ananya demonstrated a balanced 50-50 mix of BA documentation and QA testing skills. She has written BRDs and test cases for banking portals, queries SQL databases for test data staging, and communicates clearly.',
+      competencies: [
+        {
+          label: 'BRD & Functional Documentation',
+          score: 94,
+          rating: '4.7 / 5.0',
+          desc: 'High command in preparing formal business specifications and workflow diagrams.',
+        },
+        {
+          label: 'SQL Data Testing',
+          score: 91,
+          rating: '4.6 / 5.0',
+          desc: 'Writes joins and grouping queries to validate batch process outputs.',
+        },
+        {
+          label: 'Regression & Defect Lifecycle',
+          score: 90,
+          rating: '4.5 / 5.0',
+          desc: 'Proficient in Jira defect triage, severity tagging, and re-testing.',
+        },
+        {
+          label: 'Client Communication',
+          score: 92,
+          rating: '4.6 / 5.0',
+          desc: 'Clear, polite, and responsive during AI phone screening.',
+        },
+        {
+          label: 'Notice & CTC Alignment',
+          score: 95,
+          rating: '4.8 / 5.0',
+          desc: '15-day notice period, ₹ 27,000/mo expectation fits budget nicely.',
+        },
+      ],
+      strengths: [
+        'Ideal blend of Business Analysis and QA testing execution.',
+        'Proven capability in banking domain data verification.',
+      ],
+      round2Probes: [
+        'Test live SQL query formulation on a sample customer database.',
+      ],
+      transcript: [
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:04',
+          text: 'Hello Ananya, this is Anya from Innov Facilities. Do you have a moment to discuss your application for the BA & QA role?',
+        },
+        {
+          speaker: 'Ananya Roy',
+          time: '00:14',
+          text: 'Hi Anya, yes! I would love to.',
+        },
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:20',
+          text: 'Can you describe your experience combining BRD documentation with backend SQL verification?',
+        },
+        {
+          speaker: 'Ananya Roy',
+          time: '00:45',
+          text: 'In my current role, after drafting the BRD, I write the SQL validation queries myself. When the ETL batch runs, I verify that database transformations match the business logic specified in the BRD.',
+        },
+      ],
+    },
   },
   {
     id: 'cand-7',
@@ -193,5 +668,47 @@ export const INITIAL_CANDIDATES: Candidate[] = [
     education: 'B.Sc Computer Science',
     appliedDate: '22/09/2026',
     ctc: '₹ 18,000 / mo',
+    skillBrewReport: {
+      overallFitScore: 65,
+      recommendation: 'Do Not Advance',
+      callDuration: '01:10 mins',
+      callDate: '20 Oct 2026',
+      summary:
+        'Call dropped and candidate displayed limited experience with API testing and business analysis. Below minimum threshold for this dual BA/QA requirement.',
+      competencies: [
+        {
+          label: 'Manual Testing',
+          score: 70,
+          rating: '3.5 / 5.0',
+          desc: 'Basic bug logging and exploratory web testing.',
+        },
+        {
+          label: 'API & Automated Testing',
+          score: 55,
+          rating: '2.8 / 5.0',
+          desc: 'No prior hands-on experience with REST APIs or Postman.',
+        },
+        {
+          label: 'Business Requirement Analysis',
+          score: 58,
+          rating: '2.9 / 5.0',
+          desc: 'Unfamiliar with BRD/FRD creation.',
+        },
+      ],
+      strengths: ['Immediate joiner.'],
+      round2Probes: ['Requires training before deploying to client project.'],
+      transcript: [
+        {
+          speaker: 'AI Screener (Anya)',
+          time: '00:04',
+          text: 'Hello Deepak, Anya here from Innov Facilities. Are you available for a brief call?',
+        },
+        {
+          speaker: 'Deepak Verma',
+          time: '00:15',
+          text: 'Hello... yes, hello? Can you hear me?',
+        },
+      ],
+    },
   },
 ];
