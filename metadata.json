@@ -1,0 +1,6 @@
+{
+  "name": "Jobcheck ATS - Job Details & Candidate Screening",
+  "description": "Recruiter portal for job details with candidate calling options and AI screening selection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
